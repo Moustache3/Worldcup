@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Cup 2026 Predictor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>🏆 World Cup 2026 Predictor</h1>
+      <p class="sub">Pick every one of the 104 matches — from the group stage to the final.</p>
+      <div class="progress">
+        <div class="progress-bar"><div id="progress-fill"></div></div>
+        <span id="progress-text">0 / 104 matches predicted</span>
+      </div>
+      <nav class="tabs">
+        <button class="tab active" data-view="view-groups">Group Stage</button>
+        <button class="tab" data-view="view-ko">Knockout Bracket</button>
+        <button class="reset-btn" id="reset">↺ Reset all</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="view-groups" class="view active">
+      <p class="hint">Tap a team to predict a win, or <b>X</b> for a draw. Standings update live
+        (3 pts win, 1 pt draw). Top 2 of each group plus the 8 best third-placed teams reach the Round of 32.</p>
+      <div id="groups" class="groups-grid"></div>
+    </section>
+
+    <section id="view-ko" class="view">
+      <div id="ko-notice" class="notice">
+        Finish predicting all 12 groups first — the bracket fills itself from your group results.
+        Slots show their source (e.g. “Winner A”) until then.
+      </div>
+      <div id="champion" class="champion"></div>
+      <p class="hint">In the knockouts there are no draws — tap the team you think advances.</p>
+      <div id="bracket" class="bracket"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Predictions are saved automatically in your browser. Groups reflect the 5 Dec 2025 Final Draw;
+      edit <code>data.js</code> to adjust teams. Built as a static site — no account, no server.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
